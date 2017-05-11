@@ -6,7 +6,8 @@ namespace JuegoBriscas
 	{
 		public static void Main (string[] args)
 		{
-			
+			Juego j = new Juego ();
+			j.inicializar ();
 		}
 	}
 }
