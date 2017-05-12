@@ -8,6 +8,7 @@ namespace JuegoBriscas
 		{
 			Juego j = new Juego ();
 			j.inicializar ();
+			j.comenzarJuego ();
 		}
 	}
 }

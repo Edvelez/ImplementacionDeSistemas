@@ -28,23 +28,33 @@ namespace JuegoBriscas
 			jugador2.barajar (seed);
 			jugador1.repartir ();
 			jugador2.repartir ();
-			jugador1.mostrarJuego ();
 		}
 
 		public void comenzarJuego()
 		{
-			if (jugador1.juegaPrimero ()) 
+			do
 			{
-				jugador2.recibirJugada (jugador1.hacerJugada ());
-				jugador1.recibirJugada (jugador2.hacerJugada ());
-			} 
-			else 
-			{
-				jugador1.recibirJugada (jugador2.hacerJugada ());
-				jugador2.recibirJugada (jugador1.hacerJugada ());
-			}
+				jugador1.mostrarJuego ();
+				jugador2.mostrarJuego();
+				if (jugador1.juegaPrimero ()) 
+				{
+					jugador2.recibirJugada (jugador1.hacerJugada ());
+					jugador1.recibirJugada (jugador2.hacerJugada ());
+				} 
+				else 
+				{
+					jugador1.recibirJugada (jugador2.hacerJugada ());
+					jugador2.recibirJugada (jugador1.hacerJugada ());
+				}
+				jugador1.procesarJugada ();
+				jugador2.procesarJugada ();
+				if(!jugador1.finDeJuego() && !jugador2.finDeJuego())
+				{
+					jugador1.robarCartas();
+					jugador2.robarCartas();
+				}
+			}while(!jugador1.finDeJuego() && !jugador2.finDeJuego());
 		}
-		//Lo que falte
 	}
 }
 

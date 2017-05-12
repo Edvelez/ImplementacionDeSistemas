@@ -3,9 +3,9 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="JuegoBriscas/Jugador.cs">
     <Files>
       <File FileName="JuegoBriscas/Palo.cs" Line="7" Column="61" />
-      <File FileName="JuegoBriscas/Program.cs" Line="10" Column="21" />
-      <File FileName="JuegoBriscas/Juego.cs" Line="37" Column="4" />
-      <File FileName="JuegoBriscas/Jugador.cs" Line="119" Column="21" />
+      <File FileName="JuegoBriscas/Program.cs" Line="11" Column="23" />
+      <File FileName="JuegoBriscas/Juego.cs" Line="38" Column="29" />
+      <File FileName="JuegoBriscas/Jugador.cs" Line="61" Column="16" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
