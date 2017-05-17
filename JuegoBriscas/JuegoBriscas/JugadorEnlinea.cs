@@ -1,32 +1,30 @@
 ﻿using System;
+using System.Net.Sockets;
 
 namespace JuegoBriscas
 {
-	public class Juego
+	public class JugadorEnlinea : Jugador
 	{
-		Jugador jugador1;
-		Jugador jugador2;
+		private TcpClient tcpClient;
+		private NetworkStream stream;
 
+		private Jugador jugador;
 
-		public Juego ()
+		public JugadorEnlinea (string servidor, int puerto)
 		{
-			
-		}
+			tcpClient = new TcpClient (servidor, puerto);
+			stream = tcpClient.GetStream ();
 
-		public void inicializar()
-		{
-			Random rand = new Random ();
-			int seed = rand.Next ();
-			jugador1 = new Jugador (true);
-			jugador2 = new Jugador (false);
-			jugador1.barajar (seed);
-			jugador2.barajar (seed);
-			jugador1.repartir ();
-			jugador2.repartir ();
+			byte primerJugador = stream.ReadByte ();
+
+			jugador = new Jugador (primerJugador == 1);
 		}
 
 		public void comenzarJuego()
 		{
+			jugador.pantallaIincio ();
+
+			//terminar de implementar logica
 			do
 			{
 				jugador1.mostrarJuego ();

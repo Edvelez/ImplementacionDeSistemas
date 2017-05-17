@@ -10,6 +10,7 @@ namespace JuegoBriscas
 		private int puntos;
 
 		private int cartaARobar;
+		private int cartasRestantes;
 
 		private int jugadaTuya;
 		private int jugadaDeEl;
@@ -30,6 +31,12 @@ namespace JuegoBriscas
 			puntos = 0;
 			this.tienePrimerTurno = isPlayerOne;
 			cartaARobar = this.tienePrimerTurno ? 0 : 1;
+			cartasRestantes = 3;
+		}
+
+		public void pantallaIincio()
+		{
+			Console.WriteLine ("Bienvenido al juego de Briscas");
 		}
 
 		public void barajar(int seed)
@@ -46,8 +53,6 @@ namespace JuegoBriscas
 
 		public void repartir()
 		{
-			int cartaARobar = tienePrimerTurno ? 0 : 1;
-
 			for (int i = 0; i < 3; ++i) 
 			{
 				mano [i] = cartas [cartaARobar];
@@ -104,6 +109,32 @@ namespace JuegoBriscas
 			return jugadaTuya;	
 		}
 
+		//Este metodo asume que ambas cartas son de la misma vida
+		private int verificarMayor(int primeraJugada, int segundaJugada)
+		{
+			if (primeraJugada % 10 == 0)
+			{
+				return 1;
+			} else if (segundaJugada % 10 == 0)
+			{
+				return -1;
+			} else if (primeraJugada % 10 == 2)
+			{
+				return 1;
+			} else if (segundaJugada % 10 == 2)
+			{
+				return -1;
+			} else if (primeraJugada > segundaJugada)
+			{
+				return 1;
+			} else if (segundaJugada > primeraJugada)
+			{
+				return -1;
+			}
+			//This should never be returned
+			return 0;
+		}
+
 		public void procesarJugada()
 		{
 			int primeraJugada;
@@ -115,55 +146,98 @@ namespace JuegoBriscas
 			} 
 			else 
 			{
-				segundaJugada = jugadaDeEl;
-				primeraJugada = jugadaTuya;
+				primeraJugada = jugadaDeEl;
+				segundaJugada = jugadaTuya;
 			}
 
 			if (primeraJugada / 10 == segundaJugada / 10) 
 			{
-				if (primeraJugada > segundaJugada && tienePrimerTurno)
+				if (verificarMayor(primeraJugada, segundaJugada) == 1)
 				{
-					puntos += puntosDeCarta (primeraJugada) + puntosDeCarta (segundaJugada);
-				} 
-				else if (segundaJugada > primeraJugada && !tienePrimerTurno)
-				{
-					puntos += puntosDeCarta (primeraJugada) + puntosDeCarta (segundaJugada);
-					tienePrimerTurno = true;
-				}
-				return;
-			}
-			else if((primeraJugada/10 != vida/10) && (segundaJugada/10 != vida/10))
-			{
-				if ((primeraJugada / 10 != segundaJugada / 10) && tienePrimerTurno)
-				{
-					puntos += puntosDeCarta (primeraJugada) + puntosDeCarta (segundaJugada);
-				}
-				else
-				{
-					if (primeraJugada > segundaJugada && tienePrimerTurno)
+					if (tienePrimerTurno)
 					{
 						puntos += puntosDeCarta (primeraJugada) + puntosDeCarta (segundaJugada);
+					}
+					return;
+				} 
+				else
+				{
+					if (tienePrimerTurno)
+					{
+						tienePrimerTurno = false;
 					} 
-					else if (segundaJugada > primeraJugada && !tienePrimerTurno)
+					else
 					{
 						puntos += puntosDeCarta (primeraJugada) + puntosDeCarta (segundaJugada);
 						tienePrimerTurno = true;
 					}
+					return;
 				}
-				return;
+			}
+			else if((primeraJugada/10 != vida/10) && (segundaJugada/10 != vida/10))
+			{
+				if ((primeraJugada / 10 != segundaJugada / 10))
+				{
+					if (tienePrimerTurno)
+					{
+						puntos += puntosDeCarta (primeraJugada) + puntosDeCarta (segundaJugada);
+					}
+					return;
+				}
+				else
+				{
+					if (verificarMayor(primeraJugada, segundaJugada) == 1)
+					{
+						if (tienePrimerTurno)
+						{
+							puntos += puntosDeCarta (primeraJugada) + puntosDeCarta (segundaJugada);
+						}
+						return;
+					} 
+					else
+					{
+						if (tienePrimerTurno)
+						{
+							tienePrimerTurno = false;
+						} 
+						else
+						{
+							puntos += puntosDeCarta (primeraJugada) + puntosDeCarta (segundaJugada);
+							tienePrimerTurno = true;
+						}
+						return;
+					}
+				}
 			}
 			else
 			{
-				if(primeraJugada/10 == vida/10 && tienePrimerTurno)
+				if(primeraJugada/10 == vida/10)
 				{
-					puntos += puntosDeCarta (primeraJugada) + puntosDeCarta (segundaJugada);
+					if (tienePrimerTurno)
+					{
+						puntos += puntosDeCarta (primeraJugada) + puntosDeCarta (segundaJugada);
+					}
+					return;
 				}
-				else if(segundaJugada/10 == vida/10 && !tienePrimerTurno)
+				else
 				{
-					puntos += puntosDeCarta (primeraJugada) + puntosDeCarta (segundaJugada);
-					tienePrimerTurno = true;
+					if (tienePrimerTurno)
+					{
+						tienePrimerTurno = false;
+					} 
+					else
+					{
+						puntos += puntosDeCarta (primeraJugada) + puntosDeCarta (segundaJugada);
+						tienePrimerTurno = true;
+					}
+					return;
 				}
 			}
+		}
+
+		public void mostrarPuntos()
+		{
+			Console.WriteLine ("Puntos: " + puntos);
 		}
 
 		private int puntosDeCarta(int carta)
@@ -200,28 +274,18 @@ namespace JuegoBriscas
 					mano [0] = cartas [cartaARobar + 1];
 				} 
 				else
-				{
+ 				{
 					mano [0] = cartas [cartaARobar + 2];
 				}
 				cartaARobar += 2;
+				return;
 			}
 			else
 			{
-				int cuenta = 0;
-				for (int i = 0; i < 3; ++i)
+				if (cartasRestantes > 0)
 				{
-					if (mano [i] == -1)
-						++cuenta;
-				}
-
-				for (int i = 1; i < 3; ++i)
-				{
-					mano [i - 1] = mano [i];
-				}
-
-				for (int i = 2 - cuenta; i < cuenta; ++i)
-				{
-					mano [i] = -1;
+					mano [cartasRestantes - 1] = -1;
+					--cartasRestantes;
 				}
 			}
 		}
