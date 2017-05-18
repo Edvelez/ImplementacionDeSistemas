@@ -1,0 +1,5 @@
+/home/caleb/Documents/monodevelop/c_sharp/ImplementacionDeSistemas/JuegoBriscasEnlinea/JuegoBriscasEnlinea/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/caleb/Documents/monodevelop/c_sharp/ImplementacionDeSistemas/JuegoBriscasEnlinea/JuegoBriscasEnlinea/bin/Debug/JuegoBriscasEnlinea.exe.mdb
+/home/caleb/Documents/monodevelop/c_sharp/ImplementacionDeSistemas/JuegoBriscasEnlinea/JuegoBriscasEnlinea/bin/Debug/JuegoBriscasEnlinea.exe
+/home/caleb/Documents/monodevelop/c_sharp/ImplementacionDeSistemas/JuegoBriscasEnlinea/JuegoBriscasEnlinea/obj/x86/Debug/JuegoBriscasEnlinea.exe
+/home/caleb/Documents/monodevelop/c_sharp/ImplementacionDeSistemas/JuegoBriscasEnlinea/JuegoBriscasEnlinea/obj/x86/Debug/JuegoBriscasEnlinea.exe.mdb

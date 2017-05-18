@@ -1,12 +1,10 @@
 ﻿<Properties StartupItem="JuegoBriscas/JuegoBriscas.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="JuegoBriscas/JugadorEnlinea.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="JuegoBriscas/JuegoServidor.cs">
     <Files>
-      <File FileName="JuegoBriscas/Palo.cs" Line="7" Column="61" />
-      <File FileName="JuegoBriscas/Program.cs" Line="11" Column="1" />
-      <File FileName="JuegoBriscas/Juego.cs" Line="34" Column="35" />
-      <File FileName="JuegoBriscas/Jugador.cs" Line="35" Column="4" />
-      <File FileName="JuegoBriscas/JugadorEnlinea.cs" Line="27" Column="36" />
+      <File FileName="JuegoBriscas/JugadorEnlinea.cs" Line="26" Column="20" />
+      <File FileName="JuegoBriscas/JuegoServidor.cs" Line="14" Column="3" />
+      <File FileName="JuegoBriscas/Program.cs" Line="11" Column="23" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

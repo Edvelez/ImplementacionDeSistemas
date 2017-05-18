@@ -1,0 +1,5 @@
+/home/caleb/Documents/monodevelop/c_sharp/ImplementacionDeSistemas/JuegoBriscasServidor/JuegoBriscasServidor/obj/x86/Debug/.NETFramework,Version=v4.5.AssemblyAttribute.cs
+/home/caleb/Documents/monodevelop/c_sharp/ImplementacionDeSistemas/JuegoBriscasServidor/JuegoBriscasServidor/bin/Debug/JuegoBriscasServidor.exe.mdb
+/home/caleb/Documents/monodevelop/c_sharp/ImplementacionDeSistemas/JuegoBriscasServidor/JuegoBriscasServidor/bin/Debug/JuegoBriscasServidor.exe
+/home/caleb/Documents/monodevelop/c_sharp/ImplementacionDeSistemas/JuegoBriscasServidor/JuegoBriscasServidor/obj/x86/Debug/JuegoBriscasServidor.exe
+/home/caleb/Documents/monodevelop/c_sharp/ImplementacionDeSistemas/JuegoBriscasServidor/JuegoBriscasServidor/obj/x86/Debug/JuegoBriscasServidor.exe.mdb

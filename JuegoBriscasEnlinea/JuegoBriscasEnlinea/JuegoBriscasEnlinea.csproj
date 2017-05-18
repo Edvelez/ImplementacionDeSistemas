@@ -3,10 +3,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
-    <ProjectGuid>{D8CE137B-F4D1-4F84-AA33-35BDD19EED1D}</ProjectGuid>
+    <ProjectGuid>{A91D9818-68AD-48A6-A349-3F698739ED17}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>JuegoBriscas</RootNamespace>
-    <AssemblyName>JuegoBriscas</AssemblyName>
+    <RootNamespace>JuegoBriscasEnlinea</RootNamespace>
+    <AssemblyName>JuegoBriscasEnlinea</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
@@ -33,13 +33,10 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="JugadorEnlinea.cs" />
     <Compile Include="Jugador.cs" />
     <Compile Include="Palo.cs" />
-    <Compile Include="Juego.cs" />
-    <Compile Include="JugadorEnlinea.cs" />
-    <Compile Include="JuegoServidor.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
